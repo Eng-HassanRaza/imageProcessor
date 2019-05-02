@@ -1,10 +1,9 @@
 import cv2
 import numpy as np
  
-original = cv2.imread("original_golden_bridge.jpg")
-image_to_compare = cv2.imread("images/george-washington-bridge.jpg")
+original = cv2.imread("test_img1.jpg")
+image_to_compare = cv2.imread("images/test_img2.jpg")
  
-# 1) Check if 2 images are equals
 if original.shape == image_to_compare.shape:
     print("The images have same size and channels")
     difference = cv2.subtract(original, image_to_compare)
@@ -14,7 +13,6 @@ if original.shape == image_to_compare.shape:
         print("The images are completely Equal")
     else:
         print("The images are NOT equal")
-# 2) Check for similarities between the 2 images
  
 sift = cv2.xfeatures2d.SIFT_create()
 kp_1, desc_1 = sift.detectAndCompute(original, None)
