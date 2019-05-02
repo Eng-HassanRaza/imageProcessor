@@ -1,0 +1,37 @@
+Image Resizer Feature Request 3.9.209
+
+v.2. recap
+
+traverses a directory structure ignoring nodes with keywords, such as 'process'
+
+copy image, resize image copy, moves image copy to a destination directory
+
+log entry
+
+V.3 function
+
+during V.2 traverse but before copy/resize/move two things must happen.
+
+1 -The DrawingCode must be validated
+
+Code on the image will also be the image file name. If the filename/code image does NOT conform, enter appropriate log and move to the next file. Do NOT copy, move, resize. If image name/drawing code is valid:
+
+2 - Full size image is moved
+
+Using image recognition merge the file to the Production Image Collection. THIS IS A NEW DIRECTORY STUCTURE. This is NOT the same destination for the resize and copy. (that comes next. There are two possibilities for this new ‘Full Size Image is Moved’ operation:
+
+· Image recognition finds a match at the determined confidence level
+
+o Move the old version to an archive, log the archive action in the new ‘archive log’
+
+o Move the new full-size image and replace the old version. Log the replacement in a new ‘merge log’. Action Type ‘Replace’
+
+· Image recognition does NOT find a match
+
+o Using the image name/dawing code
+
+§ Create the appropriate directory
+
+· Requires lookup txt file
+
+§ Move the new full-size image to the newly created directory and log to the new ‘merge log’. Action Type ‘New’
